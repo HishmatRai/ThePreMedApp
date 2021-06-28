@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { StyleSheet, View, Text, StatusBar, ScrollView, TextInput, SafeAreaView, TouchableOpacity, Image } from 'react-native';
 import Ionicons from 'react-native-vector-icons/dist/Ionicons';
-export default function ForgotPassword(props) {
-    const [userName, onChangeUserName] = React.useState("");
+import MaterialIcons from 'react-native-vector-icons/dist/MaterialIcons';
+export default function ConfirmYourInstitutionEmail(props) {
     const [email, onChangeEmail] = React.useState("");
+    const [selectInstitution, onChangeSelectInstitution] = React.useState("");
 
     return (
         <View style={styles.container}>
@@ -12,15 +13,24 @@ export default function ForgotPassword(props) {
             <StatusBar
                 barStyle="white"
                 hidden={false}
-                backgroundColor="#03042B"
+                backgroundColor="#0A3180"
                 translucent={true}
             />
-
             {/* <==========================> --- <==========================> */}
             <TouchableOpacity style={styles._back_icon} onPress={() => props.navigation.goBack()}>
                 <Ionicons name="chevron-back" size={30} color="white" />
             </TouchableOpacity>
-            <Text style={styles._heading}>Forgot Password</Text>
+            <Text style={styles._heading}>Confirm Your{"\n"}Institution Email</Text>
+            <View style={styles._search_input_main}>
+                <TextInput
+                    style={styles._Search_input}
+                    onChangeText={onChangeSelectInstitution}
+                    value={selectInstitution}
+                    placeholder="Select your institution "
+                    placeholderTextColor="#7B8085"
+                />
+                <MaterialIcons name="search" size={30} color="#8290AB" />
+            </View>
             {/* <==========================> --- <==========================> */}
             <SafeAreaView>
                 <ScrollView showsVerticalScrollIndicator={false}>
@@ -28,44 +38,23 @@ export default function ForgotPassword(props) {
 
                         {/* <==========================> --- <==========================> */}
                         <View style={styles._label_main}>
-                            {userName !== "" ?
-                                <Text style={styles._label}>Enter your username</Text>
+                            {email !== "" ?
+                                <Text style={styles._label}>Email</Text>
                                 : null}
                             <View style={styles._input_main}>
                                 <TextInput
                                     style={styles.input}
-                                    onChangeText={onChangeUserName}
-                                    value={userName}
-                                    placeholder="Enter your username: "
+                                    onChangeText={onChangeEmail}
+                                    value={email}
+                                    placeholder="Enter your institution email "
                                     placeholderTextColor="#7B8085"
                                 />
                             </View>
                         </View>
-                        <View style={styles._label_main}>
-                            {email !== "" ?
-                                <Text style={styles._label}>Email</Text>
-                                : null}
-                        <View style={styles._input_main}>
-                            <TextInput
-                                style={styles.input}
-                                onChangeText={onChangeEmail}
-                                value={email}
-                                placeholder="Email "
-                                placeholderTextColor="#7B8085"
-                            />
-                        </View>
-                        </View>
                         {/* <==========================> --- <==========================> */}
-                        <TouchableOpacity style={styles._Recover_btn}>
-                            <Text style={styles._Recover_btn_text}>Recover My Password</Text>
+                        <TouchableOpacity style={styles._Confirm_btn}>
+                            <Text style={styles._Confirm_btn_text}>Confirm!</Text>
                         </TouchableOpacity>
-
-                        <View>
-                            <Image
-                                source={require("./../../img/forgotPasswordImg.png")}
-                                style={styles.ForgotPasswordImg}
-                            />
-                        </View>
                     </View>
                 </ScrollView>
             </SafeAreaView>
@@ -75,14 +64,13 @@ export default function ForgotPassword(props) {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: "#03042B"
+        backgroundColor: "#0A3180"
     },
     _main: {
         backgroundColor: "white",
         flex: 1,
         marginTop: 40,
-        borderTopEndRadius: 20,
-        borderTopLeftRadius: 20,
+        borderTopLeftRadius: 50,
         padding: 20
     },
     _heading: {
@@ -98,13 +86,27 @@ const styles = StyleSheet.create({
         fontWeight: "bold",
         width: "100%"
     },
+    _Search_input: {
+        fontSize: 16,
+        fontWeight: "bold",
+        width: "90%",
+    },
     _input_main: {
         flexDirection: "row",
         alignItems: "center",
         borderRadius: 5,
-        justifyContent: "space-between"
+        justifyContent: "space-between",
     },
-    _Recover_btn: {
+    _search_input_main: {
+        flexDirection: "row",
+        alignItems: "center",
+        borderRadius: 5,
+        justifyContent: "space-between",
+        backgroundColor: "white",
+        margin: 20,
+        paddingHorizontal: 10
+    },
+    _Confirm_btn: {
         backgroundColor: "#4145D1",
         borderRadius: 10,
         height: 60,
@@ -112,9 +114,10 @@ const styles = StyleSheet.create({
         width: "100%",
         alignItems: "center",
         justifyContent: "center",
-        marginTop: 30
+        marginTop: 100,
+        marginBottom: 300
     },
-    _Recover_btn_text: {
+    _Confirm_btn_text: {
         color: "white",
         fontSize: 18,
         fontWeight: "bold"
@@ -127,11 +130,6 @@ const styles = StyleSheet.create({
         borderRadius: 40 / 2,
         alignItems: "center",
         justifyContent: "center"
-    },
-    ForgotPasswordImg: {
-        width: "100%",
-        height: 238,
-        marginTop: 20
     },
     _label: {
         fontSize: 16,

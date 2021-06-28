@@ -28,61 +28,80 @@ export default function Signup(props) {
                         <Text style={styles._heading}>Create Your  {"\n"}Account</Text>
 
                         {/* <==========================> --- <==========================> */}
-
-                        <View style={styles._input_main}>
-                            <TextInput
-                                style={styles.input}
-                                onChangeText={onChangeEmail}
-                                value={email}
-                                placeholder="Email"
-                                placeholderTextColor="#7B8085"
-                            />
+                        <View style={styles._label_main}>
+                            {email !== "" ?
+                                <Text style={styles._label}>Email </Text>
+                                : null}
+                            <View style={styles._input_main}>
+                                <TextInput
+                                    style={styles.input}
+                                    onChangeText={onChangeEmail}
+                                    value={email}
+                                    placeholder="Email"
+                                    placeholderTextColor="#7B8085"
+                                />
+                            </View>
                         </View>
 
-                        <View style={styles._input_main}>
-                            <TextInput
-                                style={styles.input}
-                                onChangeText={onChangeUserName}
-                                value={userName}
-                                placeholder="User name"
-                                placeholderTextColor="#7B8085"
-                            />
-                        </View>
-                        <View style={styles._input_main}>
-                            <TextInput
-                                style={styles.inputPassword}
-                                onChangeText={onChangePassword}
-                                value={password}
-                                placeholder="Password"
-                                placeholderTextColor="#7B8085"
-                                secureTextEntry={passwordEyeIcon}
-                            />
-                            {passwordEyeIcon ? (
-                                <Entypo name="eye" size={24} color="#8290AB"
-                                    onPress={() => setPasswordEyeIcon(!passwordEyeIcon)} />
-                            ) : (
-                                <Entypo name="eye-with-line" size={24} color="#8290AB"
-                                    onPress={() => setPasswordEyeIcon(!passwordEyeIcon)} />
-                            )}
-                        </View>
-                        <View style={styles._input_main}>
-                            <TextInput
-                                style={styles.inputPassword}
-                                onChangeText={onChangeConfirmPassword}
-                                value={confirmPassword}
-                                placeholder="Confirm Password"
-                                placeholderTextColor="#7B8085"
-                                secureTextEntry={conformPasswordEyeIcon}
-                            />
-                            {conformPasswordEyeIcon ? (
-                                <Entypo name="eye" size={24} color="#8290AB"
-                                    onPress={() => setConformPassowrdEyeIcon(!conformPasswordEyeIcon)} />
-                            ) : (
-                                <Entypo name="eye-with-line" size={24} color="#8290AB"
-                                    onPress={() => setConformPassowrdEyeIcon(!conformPasswordEyeIcon)} />
-                            )}
+                        <View style={styles._label_main}>
+                            {userName !== "" ?
+                                <Text style={styles._label}>User name </Text>
+                                : null}
+                            <View style={styles._input_main}>
+                                <TextInput
+                                    style={styles.input}
+                                    onChangeText={onChangeUserName}
+                                    value={userName}
+                                    placeholder="User name"
+                                    placeholderTextColor="#7B8085"
+                                />
+                            </View>
                         </View>
 
+                        <View style={styles._label_main}>
+                            {password !== "" ?
+                                <Text style={styles._label}>Password </Text>
+                                : null}
+                            <View style={styles._input_main}>
+                                <TextInput
+                                    style={styles.inputPassword}
+                                    onChangeText={onChangePassword}
+                                    value={password}
+                                    placeholder="Password"
+                                    placeholderTextColor="#7B8085"
+                                    secureTextEntry={passwordEyeIcon}
+                                />
+                                {passwordEyeIcon ? (
+                                    <Entypo name="eye" size={24} color="#8290AB"
+                                        onPress={() => setPasswordEyeIcon(!passwordEyeIcon)} />
+                                ) : (
+                                    <Entypo name="eye-with-line" size={24} color="#8290AB"
+                                        onPress={() => setPasswordEyeIcon(!passwordEyeIcon)} />
+                                )}
+                            </View>
+                        </View>
+                        <View style={styles._label_main}>
+                            {confirmPassword !== "" ?
+                                <Text style={styles._label}>Confirm Password </Text>
+                                : null}
+                            <View style={styles._input_main}>
+                                <TextInput
+                                    style={styles.inputPassword}
+                                    onChangeText={onChangeConfirmPassword}
+                                    value={confirmPassword}
+                                    placeholder="Confirm Password"
+                                    placeholderTextColor="#7B8085"
+                                    secureTextEntry={conformPasswordEyeIcon}
+                                />
+                                {conformPasswordEyeIcon ? (
+                                    <Entypo name="eye" size={24} color="#8290AB"
+                                        onPress={() => setConformPassowrdEyeIcon(!conformPasswordEyeIcon)} />
+                                ) : (
+                                    <Entypo name="eye-with-line" size={24} color="#8290AB"
+                                        onPress={() => setConformPassowrdEyeIcon(!conformPasswordEyeIcon)} />
+                                )}
+                            </View>
+                        </View>
                         {/* <==========================> --- <==========================> */}
                         <TouchableOpacity style={styles._signup_btn}>
                             <Text style={styles._Signup_btn_text}>Sign Up</Text>
@@ -95,7 +114,7 @@ export default function Signup(props) {
                                 <Text style={styles._others_links_heading}>Sign in!</Text>
                             </TouchableOpacity>
                             <Text style={styles._others_links_heading}>Want to link your institution? </Text>
-                            <TouchableOpacity>
+                            <TouchableOpacity onPress={() => props.navigation.navigate("ConfirmYourInstitutionEmail")}>
                                 <Text style={styles._others_links_heading}>Confirm your institution email here!</Text>
                             </TouchableOpacity>
                         </View>
@@ -153,7 +172,6 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         alignItems: "center",
         borderRadius: 5,
-        padding: 10,
         justifyContent: "space-between"
     },
     _signup_btn: {
@@ -164,7 +182,7 @@ const styles = StyleSheet.create({
         width: "100%",
         alignItems: "center",
         justifyContent: "center",
-        marginTop: 3
+        marginTop: 20
     },
     _Signup_btn_text: {
         color: "white",
@@ -221,5 +239,16 @@ const styles = StyleSheet.create({
     _others_links_heading: {
         fontSize: 18,
         color: "#333333",
+    },
+    _label: {
+        fontSize: 16,
+        fontWeight: "bold",
+        color: "#7B8085",
+        marginBottom: -10
+    },
+    _label_main: {
+        borderBottomColor: "#EFEFEF",
+        borderBottomWidth: 1,
+        marginTop: 10
     }
 });

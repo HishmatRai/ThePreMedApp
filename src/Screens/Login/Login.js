@@ -7,7 +7,6 @@ export default function Login(props) {
   const [userName, onChangeUserName] = React.useState("");
   const [passwordEyeIcon, setPasswordEyeIcon] = useState(true);
   const [password, onChangePassword] = React.useState("");
-
   return (
     <View style={styles.container}>
 
@@ -25,36 +24,45 @@ export default function Login(props) {
             <Text style={styles._heading}>Welcome {"\n"}Back</Text>
 
             {/* <==========================> --- <==========================> */}
-
-            <View style={styles._input_main}>
-              <TextInput
-                style={styles.input}
-                onChangeText={onChangeUserName}
-                value={userName}
-                placeholder="User name"
-                placeholderTextColor="#7B8085"
-              />
+            <View style={styles._label_main}>
+              {userName !== "" ?
+                <Text style={styles._label}>Username</Text>
+                : null}
+              <View style={styles._input_main}>
+                <TextInput
+                  style={styles.input}
+                  onChangeText={onChangeUserName}
+                  value={userName}
+                  placeholder="User name"
+                  placeholderTextColor="#7B8085"
+                  color="black"
+                />
+              </View>
             </View>
-            <View style={styles._input_main}>
-              <TextInput
-                style={styles.inputPassword}
-                onChangeText={onChangePassword}
-                value={password}
-                placeholder="Password"
-                placeholderTextColor="#7B8085"
-                secureTextEntry={passwordEyeIcon}
-              />
-              {passwordEyeIcon ? (
-                <Entypo name="eye" size={24} color="#8290AB"
-                  onPress={() => setPasswordEyeIcon(!passwordEyeIcon)} />
-              ) : (
-                <Entypo name="eye-with-line" size={24} color="#8290AB"
-                  onPress={() => setPasswordEyeIcon(!passwordEyeIcon)} />
-              )}
+            <View style={styles._label_main}>
+              {password !== "" ?
+                <Text style={styles._label}>Password</Text>
+                : null}
+              <View style={styles._input_main}>
+                <TextInput
+                  style={styles.inputPassword}
+                  onChangeText={onChangePassword}
+                  value={password}
+                  placeholder="Password"
+                  placeholderTextColor="#7B8085"
+                  secureTextEntry={passwordEyeIcon}
+                />
+                {passwordEyeIcon ? (
+                  <Entypo name="eye" size={24} color="#8290AB"
+                    onPress={() => setPasswordEyeIcon(!passwordEyeIcon)} />
+                ) : (
+                  <Entypo name="eye-with-line" size={24} color="#8290AB"
+                    onPress={() => setPasswordEyeIcon(!passwordEyeIcon)} />
+                )}
+              </View>
             </View>
-
             {/* <==========================> --- <==========================> */}
-            <TouchableOpacity style={styles._login_btn}>
+            <TouchableOpacity style={styles._login_btn} onPress={() => props.navigation.navigate("Home")}>
               <Text style={styles._login_btn_text}>Login now</Text>
             </TouchableOpacity>
 
@@ -121,8 +129,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     borderRadius: 5,
-    padding: 10,
-    justifyContent: "space-between"
+    justifyContent: "space-between",
   },
   _login_btn: {
     backgroundColor: "#4145D1",
@@ -132,7 +139,7 @@ const styles = StyleSheet.create({
     width: "100%",
     alignItems: "center",
     justifyContent: "center",
-    marginTop: 3
+    marginTop: 20
   },
   _login_btn_text: {
     color: "white",
@@ -197,5 +204,16 @@ const styles = StyleSheet.create({
   google_icon: {
     width: 24,
     height: 24
+  },
+  _label: {
+    fontSize: 16,
+    fontWeight: "bold",
+    color: "#7B8085",
+    marginBottom: -10
+  },
+  _label_main: {
+    borderBottomColor: "#EFEFEF",
+    borderBottomWidth: 1,
+    marginTop: 10
   }
 });
