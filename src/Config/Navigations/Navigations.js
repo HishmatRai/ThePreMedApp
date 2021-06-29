@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import {Home,Login,Signup,ForgotPassword,ConfirmYourInstitutionEmail,SettingsMain,AccountDetails,MyStats,Privacy,TermsOfService} from './../../Screens/index';
+import {Home,Login,Signup,ForgotPassword,ConfirmYourInstitutionEmail,SettingsMain,AccountDetails,MyStats,Privacy,TermsOfService,SiriShortcuts,SinglePlayer} from './../../Screens/index';
 const Stack = createStackNavigator();
 function Navigations() {
   return (
@@ -17,6 +17,8 @@ function Navigations() {
         <Stack.Screen name="MyStats" component={MyStats} options={{ headerShown: false }}/>
         <Stack.Screen name="Privacy" component={Privacy} options={{ headerShown: false }}/>
         <Stack.Screen name="TermsOfService" component={TermsOfService} options={{ headerShown: false }}/>
+        <Stack.Screen name="SiriShortcuts" component={SiriShortcuts} options={{ headerShown: false }}/>
+        <Stack.Screen name="SinglePlayer" component={SinglePlayer} options={{ headerShown: false }}/>
       </Stack.Navigator>
     </NavigationContainer>
   );

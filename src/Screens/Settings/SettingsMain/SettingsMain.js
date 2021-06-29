@@ -89,7 +89,7 @@ export default function SettingsMain(props) {
                         </View>
 
                         {/* <==========================> --- <==========================> */}
-                        <TouchableOpacity style={styles._page_heading_main}>
+                        <TouchableOpacity style={styles._page_heading_main} onPress={() => props.navigation.navigate("SiriShortcuts")}>
                             <View style={styles._setting_pages_icon_main}>
                                 <View style={styles._setting_pages_SiriShortcuts_icon}>
                                     <Image

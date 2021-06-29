@@ -7,7 +7,9 @@ import Home from './Home/Home';
 import AccountDetails from './Settings/AccountDetails/AccountDetails';
 import MyStats from './MyStats/MyStats';
 import Privacy from './Privacy/Privacy';
-import TermsOfService from './TermsOfService/TermsOfService'
+import TermsOfService from './TermsOfService/TermsOfService';
+import SiriShortcuts from './Settings/SiriShortcuts/SiriShortcuts';
+import SinglePlayer from './SinglePlayer/SinglePlayer';
 export{
     Login,
     Signup,
@@ -18,5 +20,7 @@ export{
     AccountDetails,
     MyStats,
     Privacy,
-    TermsOfService
+    TermsOfService,
+    SiriShortcuts,
+    SinglePlayer
 }

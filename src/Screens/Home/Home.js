@@ -32,7 +32,7 @@ export default function Home(props) {
           >
 
             {/* <==========================> --- <==========================> */}
-            <TouchableOpacity style={styles._single_player_btn}>
+            <TouchableOpacity style={styles._single_player_btn} onPress={() => props.navigation.navigate("SinglePlayer")}>
               <Text style={styles._single_player_btn_text}>Single Player</Text>
               <Image
                 source={require("./../../img/singlePlayer.png")}

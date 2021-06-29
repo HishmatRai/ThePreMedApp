@@ -2,12 +2,14 @@ import React, { useState } from 'react';
 import { StyleSheet, View, Text, StatusBar, ScrollView, TextInput, TouchableOpacity } from 'react-native';
 import Ionicons from 'react-native-vector-icons/dist/Ionicons';
 import Entypo from 'react-native-vector-icons/dist/Entypo';
+import MaterialCommunityIcons from 'react-native-vector-icons/dist/MaterialCommunityIcons';
 export default function AccountDetails(props) {
     const [userName, onChangeUserName] = React.useState("simple_snippet");
     const [email, onChangeEmail] = React.useState("s.snippet@example.com");
     const [passwordEyeIcon, setPasswordEyeIcon] = useState(true);
     const [password, onChangePassword] = React.useState("admin@123");
     const [institution, onChangeInstitution] = React.useState("Rutgers University");
+    const [remember, setRemember] = useState(true);
     return (
         <View style={styles.container}>
 
@@ -94,11 +96,18 @@ export default function AccountDetails(props) {
                         </View>
                     </View>
                     {/* <==========================> --- <==========================> */}
-
+                 <View style={styles._remember_main}>
+                    <View >
+                        {remember ? (
+                            <MaterialCommunityIcons name="checkbox-marked-outline" size={30} color="#707070" onPress={() => setRemember(!remember)} />
+                        ) : (
+                            <MaterialCommunityIcons name="checkbox-multiple-marked" size={30} color="black" onPress={() => setRemember(!remember)} />
+                        )}
+                    </View>
                     <TouchableOpacity onPress={() => props.navigation.navigate("ConfirmYourInstitutionEmail")}>
                         <Text style={styles.Institution_btn_text}>Show My Institution on Leaderboards</Text>
                     </TouchableOpacity>
-
+                    </View>
                     {/* <==========================> --- <==========================> */}
                     <TouchableOpacity style={styles._Save_btn} onPress={() => props.navigation.navigate("SettingsMain")}>
                         <Text style={styles._Save_btn_text}>Save</Text>
@@ -151,7 +160,7 @@ const styles = StyleSheet.create({
         alignItems: "center",
         justifyContent: "center",
         marginTop: 30,
-        marginBottom:10
+        marginBottom: 10
     },
     _Save_btn_text: {
         color: "white",
@@ -196,6 +205,13 @@ const styles = StyleSheet.create({
         color: "#C1C1C1",
         fontWeight: "bold",
         textAlign: "center",
-        marginTop:20
-    }
+        marginLeft:10
+    },
+    _remember_main: {
+        flexDirection: "row",
+        alignItems: "center",
+        marginTop: 20,
+        alignSelf:"center"
+
+    },
 });
