@@ -110,7 +110,7 @@ export default function Signup(props) {
                         {/* <==========================> --- <==========================> */}
                         <View style={styles._others_links_main}>
                             <Text style={styles._others_links_heading}>Already have an account?</Text>
-                            <TouchableOpacity>
+                            <TouchableOpacity onPress={() => props.navigation.navigate("Login")}>
                                 <Text style={styles._others_links_heading}>Sign in!</Text>
                             </TouchableOpacity>
                             <Text style={styles._others_links_heading}>Want to link your institution? </Text>

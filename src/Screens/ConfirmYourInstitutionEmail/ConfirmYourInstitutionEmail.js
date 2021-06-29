@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { StyleSheet, View, Text, StatusBar, ScrollView, TextInput, SafeAreaView, TouchableOpacity, Image } from 'react-native';
+import { StyleSheet, View, Text, StatusBar, ScrollView, TextInput, TouchableOpacity } from 'react-native';
 import Ionicons from 'react-native-vector-icons/dist/Ionicons';
 import MaterialIcons from 'react-native-vector-icons/dist/MaterialIcons';
 export default function ConfirmYourInstitutionEmail(props) {
     const [email, onChangeEmail] = React.useState("");
     const [selectInstitution, onChangeSelectInstitution] = React.useState("");
-
+console.log(email)
     return (
         <View style={styles.container}>
 
@@ -32,32 +32,30 @@ export default function ConfirmYourInstitutionEmail(props) {
                 <MaterialIcons name="search" size={30} color="#8290AB" />
             </View>
             {/* <==========================> --- <==========================> */}
-            <SafeAreaView>
+            <View style={styles._main}>
                 <ScrollView showsVerticalScrollIndicator={false}>
-                    <View style={styles._main}>
 
-                        {/* <==========================> --- <==========================> */}
-                        <View style={styles._label_main}>
-                            {email !== "" ?
-                                <Text style={styles._label}>Email</Text>
-                                : null}
-                            <View style={styles._input_main}>
-                                <TextInput
-                                    style={styles.input}
-                                    onChangeText={onChangeEmail}
-                                    value={email}
-                                    placeholder="Enter your institution email "
-                                    placeholderTextColor="#7B8085"
-                                />
-                            </View>
+                    {/* <==========================> --- <==========================> */}
+                    <View style={styles._label_main}>
+                        {email !== "" ?
+                            <Text style={styles._label}>Email</Text>
+                            : null}
+                        <View style={styles._input_main}>
+                            <TextInput
+                                style={styles.input}
+                                onChangeText={onChangeEmail}
+                                value={email}
+                                placeholder="Enter your institution email "
+                                placeholderTextColor="#7B8085"
+                            />
                         </View>
-                        {/* <==========================> --- <==========================> */}
-                        <TouchableOpacity style={styles._Confirm_btn}>
-                            <Text style={styles._Confirm_btn_text}>Confirm!</Text>
-                        </TouchableOpacity>
                     </View>
+                    {/* <==========================> --- <==========================> */}
+                    <TouchableOpacity style={styles._Confirm_btn}>
+                        <Text style={styles._Confirm_btn_text}>Confirm!</Text>
+                    </TouchableOpacity>
                 </ScrollView>
-            </SafeAreaView>
+            </View>
         </View>
     );
 }
@@ -71,7 +69,9 @@ const styles = StyleSheet.create({
         flex: 1,
         marginTop: 40,
         borderTopLeftRadius: 50,
-        padding: 20
+        paddingTop: 20,
+        paddingLeft:20,
+        paddingRight:20
     },
     _heading: {
         color: "white",
@@ -115,7 +115,6 @@ const styles = StyleSheet.create({
         alignItems: "center",
         justifyContent: "center",
         marginTop: 100,
-        marginBottom: 300
     },
     _Confirm_btn_text: {
         color: "white",
