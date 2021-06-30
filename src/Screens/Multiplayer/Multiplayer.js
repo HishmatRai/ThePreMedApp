@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { StyleSheet, View, Text, StatusBar, ScrollView, TouchableOpacity, ImageBackground, Image, Modal,Alert } from 'react-native';
+import { StyleSheet, View, Text, StatusBar, ScrollView, TouchableOpacity, ImageBackground, Image, Modal, Alert } from 'react-native';
 import Ionicons from 'react-native-vector-icons/dist/Ionicons';
 import { BlurView } from "@react-native-community/blur";
 import Entypo from 'react-native-vector-icons/dist/Entypo';
-export default function SinglePlayer(props) {
+export default function Multiplayer(props) {
     const [modalVisible, setModalVisible] = useState(false);
     return (
         <View style={styles.container}>
@@ -20,7 +20,7 @@ export default function SinglePlayer(props) {
             <TouchableOpacity style={styles._back_icon} onPress={() => props.navigation.goBack()}>
                 <Ionicons name="chevron-back" size={30} color="white" />
             </TouchableOpacity>
-            <Text style={styles._heading}>Single Player</Text>
+            <Text style={styles._heading}>Multiplayer</Text>
             {/* <==========================> --- <==========================> */}
             <View style={styles._main}>
                 <ScrollView showsVerticalScrollIndicator={false}>
@@ -30,46 +30,49 @@ export default function SinglePlayer(props) {
                     >
                         {/* <==========================> --- <==========================> */}
                         <View style={styles._card_main}>
-                            <TouchableOpacity style={styles._card} onPress={() => props.navigation.navigate("EndlessMode")}>
+                            <TouchableOpacity style={styles._card} onPress={() => props.navigation.navigate("FriendsList")}>
                                 <TouchableOpacity onPress={() => setModalVisible(!modalVisible)}>
                                     <Ionicons name="md-help-circle" size={30} color="white" style={styles._help_icon} />
                                 </TouchableOpacity>
                                 <Image
-                                    source={require("./../../img/EndlessMode.png")}
-                                    style={styles.EndlessMode}
+                                    source={require("./../../img/FriendsList.png")}
+                                    style={styles.FriendsList}
                                 />
-                                <Text style={styles.card_title}>Endless Mode</Text>
+                                <Text style={styles.card_title}>Friends List</Text>
                             </TouchableOpacity>
-                            <TouchableOpacity style={styles._card2} onPress={() => props.navigation.navigate("TimedMode")}>
-                            <TouchableOpacity onPress={() => setModalVisible(!modalVisible)}>
+                            <TouchableOpacity style={styles._card2} onPress={() => props.navigation.navigate("AddFriends")}>
+                                <TouchableOpacity onPress={() => setModalVisible(!modalVisible)}>
                                     <Ionicons name="md-help-circle" size={30} color="white" style={styles._help_icon} />
                                 </TouchableOpacity>
                                 <Image
-                                    source={require("./../../img/TimedMode.png")}
-                                    style={styles.TimedMode}
+                                    source={require("./../../img/AddFriends.png")}
+                                    style={styles.AddFriends}
                                 />
-                                <Text style={styles.card_title}>Timed Mode</Text>
+                                <Text style={styles.card_title}>Add Friends</Text>
                             </TouchableOpacity>
                         </View>
 
                         {/* <==========================> --- <==========================> */}
-                        <TouchableOpacity style={styles._card3} onPress={() => props.navigation.navigate("ReviewMode")}>
-                        <TouchableOpacity onPress={() => setModalVisible(!modalVisible)}>
-                                    <Ionicons name="md-help-circle" size={30} color="white" style={styles._help_icon} />
-                                </TouchableOpacity>
+                        <TouchableOpacity style={styles._card3} onPress={() => props.navigation.navigate("Leaderboard")}>
+                            <TouchableOpacity onPress={() => setModalVisible(!modalVisible)}>
+                                <Ionicons name="md-help-circle" size={30} color="white" style={styles._help_icon} />
+                            </TouchableOpacity>
                             <View style={styles._card3_data}>
-                                <Text style={styles.card3_title}>Review Mode</Text>
-                                <Ionicons name="bookmark-outline" size={30} color="white" />
+                                <Text style={styles.card3_title}>Leaderboard</Text>
+                                <Image
+                                    source={require("./../../img/Leaderboards.png")}
+                                    style={styles.Leaderboards}
+                                />
                             </View>
                         </TouchableOpacity>
 
                         {/* <==========================> --- <==========================> */}
-                        <TouchableOpacity style={styles._card4} onPress={() => props.navigation.navigate("OverviewMode")}>
-                        <TouchableOpacity onPress={() => setModalVisible(!modalVisible)}>
-                                    <Ionicons name="md-help-circle" size={30} color="white" style={styles._help_icon} />
-                                </TouchableOpacity>
+                        <TouchableOpacity style={styles._card4} onPress={() => props.navigation.navigate("CurrentMatches")}>
+                            <TouchableOpacity onPress={() => setModalVisible(!modalVisible)}>
+                                <Ionicons name="md-help-circle" size={30} color="white" style={styles._help_icon} />
+                            </TouchableOpacity>
                             <View style={styles._card3_data}>
-                                <Text style={styles.card3_title}>Overview Mode</Text>
+                                <Text style={styles.card3_title}>Current Matches</Text>
                                 <Image
                                     source={require("./../../img/OverviewMode.png")}
                                     style={styles.OverviewMode}
@@ -79,14 +82,14 @@ export default function SinglePlayer(props) {
 
                         {/* <==========================> --- <==========================> */}
                         <TouchableOpacity style={styles._card5} onPress={() => props.navigation.navigate("Flashcards")}>
-                        <TouchableOpacity onPress={() => setModalVisible(!modalVisible)}>
-                                    <Ionicons name="md-help-circle" size={30} color="white" style={styles._help_icon} />
-                                </TouchableOpacity>
+                            <TouchableOpacity onPress={() => setModalVisible(!modalVisible)}>
+                                <Ionicons name="md-help-circle" size={30} color="white" style={styles._help_icon} />
+                            </TouchableOpacity>
                             <View style={styles._card3_data}>
-                                <Text style={styles.card3_title}>Flashcards</Text>
+                                <Text style={styles.card3_title}>Random Opponent</Text>
                                 <Image
-                                    source={require("./../../img/Flashcards.png")}
-                                    style={styles.Flashcards}
+                                    source={require("./../../img/RandomOpponent.png")}
+                                    style={styles.RandomOpponent}
                                 />
                             </View>
                         </TouchableOpacity>
@@ -204,11 +207,11 @@ const styles = StyleSheet.create({
     _help_icon: {
         alignSelf: "flex-end"
     },
-    EndlessMode: {
+    FriendsList: {
         alignSelf: "center",
         marginVertical: 10
     },
-    TimedMode: {
+    AddFriends: {
         alignSelf: "center",
         marginVertical: 10
     },
@@ -221,8 +224,9 @@ const styles = StyleSheet.create({
     },
     _card3_data: {
         flexDirection: "row",
-        justifyContent: "space-around",
+        justifyContent: "space-between",
         alignItems: "center",
+        marginHorizontal: 20
     },
     card3_title: {
         fontSize: 18,

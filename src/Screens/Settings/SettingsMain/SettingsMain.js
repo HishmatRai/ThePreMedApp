@@ -1,11 +1,30 @@
 import React, { useState } from 'react';
-import { StyleSheet, View, Text, StatusBar, ScrollView, TouchableOpacity, Image } from 'react-native';
+import { StyleSheet, View, Text, StatusBar, ScrollView, TouchableOpacity, Image,Share } from 'react-native';
 import Ionicons from 'react-native-vector-icons/dist/Ionicons';
 import AntDesign from 'react-native-vector-icons/dist/AntDesign';
 import FontAwesome from 'react-native-vector-icons/dist/FontAwesome';
 import MaterialCommunityIcons from 'react-native-vector-icons/dist/MaterialCommunityIcons';
 import MaterialIcons from 'react-native-vector-icons/dist/MaterialIcons';
 export default function SettingsMain(props) {
+    const onShare = async () => {
+        try {
+          const result = await Share.share({
+            message:
+              'React Native | A framework for building native apps using React',
+          });
+          if (result.action === Share.sharedAction) {
+            if (result.activityType) {
+              // shared with activity type of result.activityType
+            } else {
+              // shared
+            }
+          } else if (result.action === Share.dismissedAction) {
+            // dismissed
+          }
+        } catch (error) {
+          alert(error.message);
+        }
+    }
     return (
         <View style={styles.container}>
 
@@ -118,7 +137,7 @@ export default function SettingsMain(props) {
                         </TouchableOpacity>
 
                         {/* <==========================> --- <==========================> */}
-                        <TouchableOpacity style={styles._page_heading_main}>
+                        <TouchableOpacity style={styles._page_heading_main} onPress={onShare}>
                             <View style={styles._setting_pages_icon_main}>
                                 <View style={styles._setting_pages_Share_icon}>
                                     <FontAwesome name="share-square-o" size={20} color="#41C188" />

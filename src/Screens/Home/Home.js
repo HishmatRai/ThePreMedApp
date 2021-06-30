@@ -40,7 +40,7 @@ export default function Home(props) {
               />
             </TouchableOpacity>
             {/* <==========================> --- <==========================> */}
-            <TouchableOpacity style={styles._Multiplayer_btn}>
+            <TouchableOpacity style={styles._Multiplayer_btn} onPress={() => props.navigation.navigate("Multiplayer")}>
               <Text style={styles._Multiplayer_btn_text}>Multiplayer</Text>
               <Image
                 source={require("./../../img/Multiplayer.png")}
