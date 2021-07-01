@@ -3,7 +3,6 @@ import { StyleSheet, View, Text, StatusBar, ScrollView, TouchableOpacity, ImageB
 import Ionicons from 'react-native-vector-icons/dist/Ionicons';
 import { BlurView } from "@react-native-community/blur";
 import Entypo from 'react-native-vector-icons/dist/Entypo';
-import RoundWheel from './../../Components/RoundWheel/RoundWheel'
 export default function Round(props) {
     const [modalVisible, setModalVisible] = useState(false);
     const [modalVisible2, setModalVisible2] = useState(false);
@@ -124,7 +123,11 @@ export default function Round(props) {
                         style={styles.VS_img}
                     />
                     <ScrollView showsVerticalScrollIndicator={false}>
-< RoundWheel/>
+<TouchableOpacity style={styles._round_box}></TouchableOpacity>
+
+<TouchableOpacity style={styles._Spin_btn} onPress={() => setModalVisible2(!modalVisible2)}>
+    <Text style={styles._Spin_btn_text}>Spin</Text>
+</TouchableOpacity>
                     </ScrollView>
                 </ImageBackground>
             </View>
@@ -163,14 +166,14 @@ export default function Round(props) {
                 <View style={styles.centeredView}>
                     <BlurView >
                         <View style={styles.modalView}>
-                            <TouchableOpacity onPress={() => setModalVisible2(!modalVisible2)} style={styles._close_btn}>
-                                <Entypo name="cross" size={20} color="#707070" />
-                            </TouchableOpacity>
+                            <Text style={styles._BehavioralScience}>Behavioral Science</Text>
                             <Image
-                                source={require("./../../img/singlePlayerpopup.png")}
+                                source={require("./../../img/RandomOpponentmind.png")}
                                 style={styles.singlePlayerpopup}
                             />
-                            <Text style={styles.modalText}>Get Five Lives And See How Long You Last Against The Onslaught Of Questions!</Text>
+                            <TouchableOpacity style={styles._Play_btn}>
+                                <Text style={styles._Play_btn_text}>Play</Text>
+                            </TouchableOpacity>
                         </View>
                     </BlurView>
                 </View>
@@ -299,5 +302,49 @@ const styles = StyleSheet.create({
         height: 30,
         alignItems: "center",
         justifyContent: "center"
+    },
+    _round_box:{
+        borderColor:"black",
+        borderWidth:1,
+        width:250,
+        height:250,
+        borderRadius:250/2,
+        marginTop:50,
+        alignSelf:"center"
+    },
+    _Spin_btn:{
+backgroundColor:"#4145D1",
+height:60,
+marginTop:10,
+marginBottom:20,
+borderRadius:10,
+alignItems:"center",
+justifyContent:"center"
+    },
+    _Spin_btn_text:{
+fontSize:16,
+fontWeight:'bold',
+color:'white'
+    },
+    _BehavioralScience:{
+        fontSize:26,
+        color:"#04052B",
+        fontWeight:'bold',
+        textAlign:"center",
+        marginTop:20,
+        marginBottom:20
+    },
+    _Play_btn:{
+backgroundColor:'#4145D1',
+height:40,
+borderRadius:10,
+alignItems:"center",
+justifyContent:"center",
+marginBottom:10
+    },
+    _Play_btn_text:{
+fontSize:16,
+fontWeight:'bold',
+color:'white'
     }
 });

@@ -32,7 +32,13 @@ import UpgradetoPremium from './UpgradetoPremium/UpgradetoPremium';
 import UpgradetoPremium2 from './UpgradetoPremium/UpgradetoPremium2';
 import UpgradetoPremium3 from './UpgradetoPremium/UpgradetoPremium3';
 import Biochemistry from './Biochemistry/Biochemistry';
-import BiochemistryOptions from './BiochemistryOptions/BiochemistryOptions'
+import BiochemistryOptions from './BiochemistryOptions/BiochemistryOptions';
+import DecksTags from './DecksTags/DecksTags'
+import Decks from './Decks/Decks';
+import AllFlashcards from './AllFlashcards/AllFlashcards';
+import OverviewModeOptions from './OverviewModeOptions/OverviewModeOptions';
+import InstitutionHighScore from './InstitutionHighScore/InstitutionHighScore';
+import GlobalHighScore from './GlobalHighScore/GlobalHighScore'
 export{
     Login,
     Signup,
@@ -68,5 +74,11 @@ export{
     UpgradetoPremium2,
     UpgradetoPremium3,
     Biochemistry,
-    BiochemistryOptions
+    BiochemistryOptions,
+    Decks,
+    DecksTags,
+    AllFlashcards,
+    OverviewModeOptions,
+    InstitutionHighScore,
+    GlobalHighScore
 }

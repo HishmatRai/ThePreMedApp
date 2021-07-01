@@ -28,7 +28,7 @@ export default function Leaderboards(props) {
                 <ScrollView showsVerticalScrollIndicator={false}>
 
                     {/* <==========================> --- <==========================> */}
-                    <TouchableOpacity style={styles._card3}>
+                    <TouchableOpacity style={styles._card3} onPress={() => props.navigation.navigate("GlobalHighScore")}>
                         <View style={styles._card3_data}>
                             <Text style={styles.card3_title}>Global {"\n"}High Score</Text>
                             <Image
@@ -39,7 +39,7 @@ export default function Leaderboards(props) {
                     </TouchableOpacity>
 
                     {/* <==========================> --- <==========================> */}
-                    <TouchableOpacity style={styles._card5}>
+                    <TouchableOpacity style={styles._card5} onPress={() => props.navigation.navigate("InstitutionHighScore")}>
                         <View style={styles._card3_data}>
                             <Text style={styles.card3_title}>Institution  {"\n"}High Score</Text>
                             <Image

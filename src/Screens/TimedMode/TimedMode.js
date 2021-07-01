@@ -32,7 +32,7 @@ export default function TimedMode(props) {
                         </TouchableOpacity>
 
                         {/* <==========================> --- <==========================> */}
-                        <TouchableOpacity style={styles._card4}>
+                        <TouchableOpacity style={styles._card4} onPress={() => props.navigation.navigate("Leaderboards")}>
                             <View style={styles._card3_data}>
                                 <Text style={styles.card3_title}>Leaderboards</Text>
                                 <Image

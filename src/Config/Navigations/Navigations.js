@@ -36,7 +36,13 @@ import {
   UpgradetoPremium2,
   UpgradetoPremium3,
   Biochemistry,
-  BiochemistryOptions
+  BiochemistryOptions,
+  Decks,
+  DecksTags,
+  AllFlashcards,
+  OverviewModeOptions,
+  InstitutionHighScore,
+  GlobalHighScore
 } from './../../Screens/index';
 const Stack = createStackNavigator();
 function Navigations() {
@@ -78,6 +84,12 @@ function Navigations() {
         <Stack.Screen name="UpgradetoPremium3" component={UpgradetoPremium3} options={{ headerShown: false }} />
         <Stack.Screen name="Biochemistry" component={Biochemistry} options={{ headerShown: false }} />
         <Stack.Screen name="BiochemistryOptions" component={BiochemistryOptions} options={{ headerShown: false }} />
+        <Stack.Screen name="Decks" component={Decks} options={{ headerShown: false }} />
+        <Stack.Screen name="DecksTags" component={DecksTags} options={{ headerShown: false }} />
+        <Stack.Screen name="AllFlashcards" component={AllFlashcards} options={{ headerShown: false }} />
+        <Stack.Screen name="OverviewModeOptions" component={OverviewModeOptions} options={{ headerShown: false }} />
+        <Stack.Screen name="InstitutionHighScore" component={InstitutionHighScore} options={{ headerShown: false }} />
+        <Stack.Screen name="GlobalHighScore" component={GlobalHighScore} options={{ headerShown: false }} />
       </Stack.Navigator>
     </NavigationContainer>
   );

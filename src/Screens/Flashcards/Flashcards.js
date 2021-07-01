@@ -53,7 +53,7 @@ export default function Flashcards(props) {
                     </TouchableOpacity>
 
                     {/* <==========================> --- <==========================> */}
-                    <TouchableOpacity style={styles._card5}>
+                    <TouchableOpacity style={styles._card5} onPress={() => props.navigation.navigate("Decks")}>
                         <TouchableOpacity onPress={() => setModalVisible(!modalVisible)}>
                             <Ionicons name="md-help-circle" size={30} color="white" style={styles._help_icon} />
                         </TouchableOpacity>
@@ -67,7 +67,7 @@ export default function Flashcards(props) {
                     </TouchableOpacity>
 
                     {/* <==========================> --- <==========================> */}
-                    <TouchableOpacity style={styles._card6}>
+                    <TouchableOpacity style={styles._card6}  onPress={() => props.navigation.navigate("OverviewModeOptions")}>
                         <TouchableOpacity onPress={() => setModalVisible(!modalVisible)}>
                             <Ionicons name="md-help-circle" size={30} color="white" style={styles._help_icon} />
                         </TouchableOpacity>
