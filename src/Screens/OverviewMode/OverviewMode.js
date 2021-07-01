@@ -78,7 +78,7 @@ export default function OverviewMode(props) {
                     </TouchableOpacity>
 
                     {/* <==========================> --- <==========================> */}
-                    <TouchableOpacity style={styles._card9}>
+                    <TouchableOpacity style={styles._card9} onPress={() => props.navigation.navigate("Biochemistry")}>
                         <View style={styles._card3_data}>
                             <Text style={styles.card3_title}>Biochemistry</Text>
                             <Image

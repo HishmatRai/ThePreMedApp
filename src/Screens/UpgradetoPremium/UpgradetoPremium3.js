@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { StyleSheet, View, Text, StatusBar, ScrollView, TouchableOpacity } from 'react-native';
 import Ionicons from 'react-native-vector-icons/dist/Ionicons';
-import TabViewEx from './../../Components/TabView/TabView'
-export default function Leaderboard(props) {
+import PlansCompareTabs3 from './../../Components/PlansCompareTabs/PlansCompareTabs3'
+export default function UpgradetoPremium3(props) {
     return (
         <View style={styles.container}>
 
@@ -10,7 +10,7 @@ export default function Leaderboard(props) {
             <StatusBar
                 barStyle="white"
                 hidden={false}
-                backgroundColor="#54C1FB"
+                backgroundColor="#05062D"
                 translucent={true}
             />
             {/* <==========================> --- <==========================> */}
@@ -18,17 +18,11 @@ export default function Leaderboard(props) {
                 <TouchableOpacity style={styles._back_icon} onPress={() => props.navigation.goBack()}>
                     <Ionicons name="chevron-back" size={30} color="white" />
                 </TouchableOpacity>
-                <Text style={styles._heading}>Multiplayer High Score</Text>
             </View>
             {/* <==========================> --- <==========================> */}
             <View style={styles._main}>
-                <ScrollView showsVerticalScrollIndicator={false}>
-
-                    {/* <==========================> --- <==========================> */}
-
-                    <TabViewEx />
-
-                </ScrollView>
+                {/* <==========================> --- <==========================> */}
+                <PlansCompareTabs3 />
             </View>
         </View>
     );
@@ -36,14 +30,12 @@ export default function Leaderboard(props) {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: "#54C1FB"
+        backgroundColor: "#05062D"
     },
     _main: {
         flex: 1,
-        marginTop: 40,
+        marginTop: 10,
         paddingTop: 20,
-        paddingLeft: 20,
-        paddingRight: 20
     },
     _heading: {
         color: "white",

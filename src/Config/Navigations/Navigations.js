@@ -30,7 +30,13 @@ import {
   Leaderboards,
   Options,
   EndlessModePlay2,
-  GameOver2
+  GameOver2,
+  Round,
+  UpgradetoPremium,
+  UpgradetoPremium2,
+  UpgradetoPremium3,
+  Biochemistry,
+  BiochemistryOptions
 } from './../../Screens/index';
 const Stack = createStackNavigator();
 function Navigations() {
@@ -66,6 +72,12 @@ function Navigations() {
         <Stack.Screen name="Options" component={Options} options={{ headerShown: false }} />
         <Stack.Screen name="EndlessModePlay2" component={EndlessModePlay2} options={{ headerShown: false }} />
         <Stack.Screen name="GameOver2" component={GameOver2} options={{ headerShown: false }} />
+        <Stack.Screen name="Round" component={Round} options={{ headerShown: false }} />
+        <Stack.Screen name="UpgradetoPremium" component={UpgradetoPremium} options={{ headerShown: false }} />
+        <Stack.Screen name="UpgradetoPremium2" component={UpgradetoPremium2} options={{ headerShown: false }} />
+        <Stack.Screen name="UpgradetoPremium3" component={UpgradetoPremium3} options={{ headerShown: false }} />
+        <Stack.Screen name="Biochemistry" component={Biochemistry} options={{ headerShown: false }} />
+        <Stack.Screen name="BiochemistryOptions" component={BiochemistryOptions} options={{ headerShown: false }} />
       </Stack.Navigator>
     </NavigationContainer>
   );

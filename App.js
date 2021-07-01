@@ -1,11 +1,12 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet } from 'react-native';
 import Navigation from './src/Config/Navigations/Navigations';
+import { NativeBaseProvider } from 'native-base';
 export default function App(props) {
   return (
-    <View style={styles.container}>
+    <NativeBaseProvider>
       <Navigation />
-    </View>
+    </NativeBaseProvider>
   );
 }
 const styles = StyleSheet.create({

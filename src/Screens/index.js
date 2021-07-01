@@ -26,7 +26,13 @@ import YourAnswers from './YourAnswers/YourAnswers';
 import Leaderboards from './Leaderboards/Leaderboards';
 import Options from './Options/Options';
 import EndlessModePlay2 from './EndlessModePlay2/EndlessModePlay2';
-import GameOver2 from './GameOver2/GameOver2'
+import GameOver2 from './GameOver2/GameOver2';
+import Round from './Round/Round';
+import UpgradetoPremium from './UpgradetoPremium/UpgradetoPremium';
+import UpgradetoPremium2 from './UpgradetoPremium/UpgradetoPremium2';
+import UpgradetoPremium3 from './UpgradetoPremium/UpgradetoPremium3';
+import Biochemistry from './Biochemistry/Biochemistry';
+import BiochemistryOptions from './BiochemistryOptions/BiochemistryOptions'
 export{
     Login,
     Signup,
@@ -56,5 +62,11 @@ export{
     Leaderboards,
     Options,
     EndlessModePlay2,
-    GameOver2
+    GameOver2,
+    Round,
+    UpgradetoPremium,
+    UpgradetoPremium2,
+    UpgradetoPremium3,
+    Biochemistry,
+    BiochemistryOptions
 }

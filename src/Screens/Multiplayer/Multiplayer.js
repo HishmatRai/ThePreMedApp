@@ -5,6 +5,7 @@ import { BlurView } from "@react-native-community/blur";
 import Entypo from 'react-native-vector-icons/dist/Entypo';
 export default function Multiplayer(props) {
     const [modalVisible, setModalVisible] = useState(false);
+    const [modalVisible2, setModalVisible2] = useState(false);
     return (
         <View style={styles.container}>
 
@@ -81,8 +82,8 @@ export default function Multiplayer(props) {
                         </TouchableOpacity>
 
                         {/* <==========================> --- <==========================> */}
-                        <TouchableOpacity style={styles._card5} onPress={() => props.navigation.navigate("Flashcards")}>
-                            <TouchableOpacity onPress={() => setModalVisible(!modalVisible)}>
+                        <TouchableOpacity style={styles._card5} onPress={() => props.navigation.navigate("Round")}>
+                            <TouchableOpacity onPress={() => setModalVisible2(!modalVisible2)}>
                                 <Ionicons name="md-help-circle" size={30} color="white" style={styles._help_icon} />
                             </TouchableOpacity>
                             <View style={styles._card3_data}>
@@ -115,6 +116,31 @@ export default function Multiplayer(props) {
                                 <Entypo name="cross" size={20} color="#707070" />
                             </TouchableOpacity>
                             <Text style={styles.modalText}>Get five lives and see how long you last against the onslaught of questions!</Text>
+                        </View>
+                    </BlurView>
+                </View>
+            </Modal>
+                {/* <==========================> --- <==========================> */}
+                <Modal
+                animationType="slide"
+                transparent={true}
+                visible={modalVisible2}
+                onRequestClose={() => {
+                    Alert.alert("Modal has been closed.");
+                    setModalVisible2(!modalVisible2);
+                }}
+            >
+                <View style={styles.centeredView}>
+                    <BlurView >
+                        <View style={styles.modalView}>
+                            <TouchableOpacity onPress={() => setModalVisible2(!modalVisible2)} style={styles._close_btn}>
+                                <Entypo name="cross" size={20} color="#707070" />
+                            </TouchableOpacity>
+                            <Image
+                                    source={require("./../../img/singlePlayerpopup.png")}
+                                    style={styles.singlePlayerpopup}
+                                />
+                            <Text style={styles.modalText}>Get Five Lives And See How Long You Last Against The Onslaught Of Questions!</Text>
                         </View>
                     </BlurView>
                 </View>
@@ -261,5 +287,8 @@ const styles = StyleSheet.create({
         paddingRight: 30,
         paddingLeft: 30,
         paddingBottom: 40
+    },
+    singlePlayerpopup:{
+        alignSelf:"center"
     }
 });
