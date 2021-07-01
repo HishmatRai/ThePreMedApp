@@ -1,47 +1,27 @@
-import React, { Component } from 'react'
+// import React, { Component } from 'react'
+// import WheelOfFortune from 'react-native-wheel-of-fortune'
+// import { View, Text, TouchableOpacity } from 'react-native';
 
-import WheelComponent from 'react-wheel-of-prizes'
-import 'react-wheel-of-prizes/dist/index'
+// const RoundWheel = () => {
+//   const rewards = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+//   return (
+//     <View>
+//       <WheelOfFortune
+//         onRef={ref => (this.child = ref)}
+//         rewards={rewards}
+//         knobSize={20}
+//         borderWidth={3}
+//         borderColor={"#FFF"}
+//         winner={3}
+//         innerRadius={50}
+//         backgroundColor={"#c0392b"}
+//         getWinner={(value, index) => this.setState({ winnerValue: value, winnerIndex: index })}
+//       />
+//       <TouchableOpacity onPress={() => { this.child._onPress() }}>
+//         <Text>Click</Text>
+//       </TouchableOpacity>
+//     </View>
+//   )
+// }
 
-const RoundWheel = () => {
-  const segments = [
-    'better luck next time',
-    'won 70',
-    'won 10',
-    'better luck next time',
-    'won 2',
-    'won uber pass',
-    'better luck next time',
-    'won a voucher'
-  ]
-  const segColors = [
-    '#EE4040',
-    '#F0CF50',
-    '#815CD1',
-    '#3DA5E0',
-    '#34A24F',
-    '#F9AA1F',
-    '#EC3F3F',
-    '#FF9000'
-  ]
-  const onFinished = (winner) => {
-    console.log(winner)
-  }
-  return (
-    <WheelComponent
-      segments={segments}
-      segColors={segColors}
-      winningSegment='won 10'
-      onFinished={(winner) => onFinished(winner)}
-      primaryColor='black'
-      contrastColor='white'
-      buttonText='Spin'
-      isOnlyOnce={false}
-      size={290}
-      upDuration={100}
-      downDuration={1000}
-    />
-  )
-}
-
-export default RoundWheel;
+// export default RoundWheel;

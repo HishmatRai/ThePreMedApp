@@ -124,7 +124,7 @@ export default function Round(props) {
                         style={styles.VS_img}
                     />
                     <ScrollView showsVerticalScrollIndicator={false}>
-
+< RoundWheel/>
                     </ScrollView>
                 </ImageBackground>
             </View>
