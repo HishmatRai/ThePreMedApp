@@ -103,7 +103,7 @@ export default function Signup(props) {
                             </View>
                         </View>
                         {/* <==========================> --- <==========================> */}
-                        <TouchableOpacity style={styles._signup_btn}>
+                        <TouchableOpacity style={styles._signup_btn} onPress={() => props.navigation.navigate("Home")}>
                             <Text style={styles._Signup_btn_text}>Sign Up</Text>
                         </TouchableOpacity>
 

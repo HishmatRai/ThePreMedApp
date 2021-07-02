@@ -24,7 +24,7 @@ export default function ReviewMode(props) {
                 <ScrollView showsVerticalScrollIndicator={false}>
 
                     {/* <==========================> --- <==========================> */}
-                    <TouchableOpacity style={styles._card3}>
+                    <TouchableOpacity style={styles._card3} onPress={() => props.navigation.navigate("EndlessModePlay2")}>
                         <View style={styles._card3_data}>
                             <Text style={styles.card3_title}>Play</Text>
                             <FontAwesome name="youtube-play" size={30} color="white" />
@@ -32,7 +32,7 @@ export default function ReviewMode(props) {
                     </TouchableOpacity>
 
                     {/* <==========================> --- <==========================> */}
-                    <TouchableOpacity style={styles._card5}>
+                    <TouchableOpacity style={styles._card5}  onPress={() => props.navigation.navigate("Options")}>
                         <View style={styles._card3_data}>
                             <Text style={styles.card3_title}>Options</Text>
                             <Image

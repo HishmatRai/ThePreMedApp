@@ -22,7 +22,7 @@ export default function UpgradetoPremium2(props) {
             {/* <==========================> --- <==========================> */}
             <View style={styles._main}>
                 {/* <==========================> --- <==========================> */}
-                <PlansCompareTabs2 />
+                <PlansCompareTabs2  />
             </View>
         </View>
     );

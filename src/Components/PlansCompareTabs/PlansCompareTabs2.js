@@ -4,7 +4,7 @@ import { StyleSheet, View, Text, Image, TouchableOpacity, ScrollView, Alert, Mod
 import Ionicons from 'react-native-vector-icons/dist/Ionicons';
 import Entypo from 'react-native-vector-icons/dist/Entypo';
 import { BlurView } from "@react-native-community/blur";
-function PlansCompareTabs2() {
+function PlansCompareTabs2(props) {
     const [modalVisible, setModalVisible] = useState(false);
     const [select, setSelect] = useState(true);
     const [select2, setSelect2] = useState(true);
@@ -16,18 +16,6 @@ function PlansCompareTabs2() {
     const [select8, setSelect8] = useState(true);
     const [select9, setSelect9] = useState(true);
     const [select10, setSelect10] = useState(true);
-    let CardData = [
-        { price: "$14.99/Month", des: "For A Month-To-Month Subscription" },
-        { price: "$14.99/Month", des: "For A Month-To-Month Subscription" },
-        { price: "$14.99/Month", des: "For A Month-To-Month Subscription" },
-        { price: "$14.99/Month", des: "For A Month-To-Month Subscription" },
-        { price: "$14.99/Month", des: "For A Month-To-Month Subscription" },
-        { price: "$14.99/Month", des: "For A Month-To-Month Subscription" },
-        { price: "$14.99/Month", des: "For A Month-To-Month Subscription" },
-        { price: "$14.99/Month", des: "For A Month-To-Month Subscription" },
-        { price: "$14.99/Month", des: "For A Month-To-Month Subscription" },
-        { price: "$14.99/Month", des: "For A Month-To-Month Subscription" },
-    ]
     return (
         <Box width="100%">
             <Tabs isFitted colorScheme="orange">
@@ -46,7 +34,7 @@ function PlansCompareTabs2() {
                                 <Text style={styles._list}>No ads</Text>
                                 <Text style={styles._list}>Leaderboards</Text>
 
-                                <TouchableOpacity style={styles._select_btn}>
+                                <TouchableOpacity style={styles._select_btn} >
                                     <Text style={styles._select_btn_text}>Select</Text>
                                 </TouchableOpacity>
 

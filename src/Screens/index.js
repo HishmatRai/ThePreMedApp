@@ -38,7 +38,10 @@ import Decks from './Decks/Decks';
 import AllFlashcards from './AllFlashcards/AllFlashcards';
 import OverviewModeOptions from './OverviewModeOptions/OverviewModeOptions';
 import InstitutionHighScore from './InstitutionHighScore/InstitutionHighScore';
-import GlobalHighScore from './GlobalHighScore/GlobalHighScore'
+import GlobalHighScore from './GlobalHighScore/GlobalHighScore';
+import BehavioralScienceTest from './BehavioralScienceTest/BehavioralScienceTest';
+import Explanation from './Explanation/Explanation';
+import ChooseYourBadge from './ChooseYourBadge/ChooseYourBadge'
 export{
     Login,
     Signup,
@@ -80,5 +83,8 @@ export{
     AllFlashcards,
     OverviewModeOptions,
     InstitutionHighScore,
-    GlobalHighScore
+    GlobalHighScore,
+    BehavioralScienceTest,
+    Explanation,
+    ChooseYourBadge
 }

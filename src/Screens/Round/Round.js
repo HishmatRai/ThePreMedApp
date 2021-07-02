@@ -3,6 +3,7 @@ import { StyleSheet, View, Text, StatusBar, ScrollView, TouchableOpacity, ImageB
 import Ionicons from 'react-native-vector-icons/dist/Ionicons';
 import { BlurView } from "@react-native-community/blur";
 import Entypo from 'react-native-vector-icons/dist/Entypo';
+import RoundCircle from './../../Components/RoundWheel/RoundWheel'
 export default function Round(props) {
     const [modalVisible, setModalVisible] = useState(false);
     const [modalVisible2, setModalVisible2] = useState(false);
@@ -122,12 +123,14 @@ export default function Round(props) {
                         source={require("./../../img/VS.png")}
                         style={styles.VS_img}
                     />
-                    <ScrollView showsVerticalScrollIndicator={false}>
-<TouchableOpacity style={styles._round_box}></TouchableOpacity>
+                    <ScrollView showsVerticalScrollIndicator={false} >
+                        <TouchableOpacity style={styles._round_box}>
+                            <RoundCircle />
+                        </TouchableOpacity>
 
-<TouchableOpacity style={styles._Spin_btn} onPress={() => setModalVisible2(!modalVisible2)}>
-    <Text style={styles._Spin_btn_text}>Spin</Text>
-</TouchableOpacity>
+                        <TouchableOpacity style={styles._Spin_btn} onPress={() => setModalVisible2(!modalVisible2)}>
+                            <Text style={styles._Spin_btn_text}>Spin</Text>
+                        </TouchableOpacity>
                     </ScrollView>
                 </ImageBackground>
             </View>
@@ -171,7 +174,7 @@ export default function Round(props) {
                                 source={require("./../../img/RandomOpponentmind.png")}
                                 style={styles.singlePlayerpopup}
                             />
-                            <TouchableOpacity style={styles._Play_btn}>
+                            <TouchableOpacity style={styles._Play_btn} onPress={() => props.navigation.navigate("BehavioralScienceTest")}>
                                 <Text style={styles._Play_btn_text}>Play</Text>
                             </TouchableOpacity>
                         </View>
@@ -276,7 +279,7 @@ const styles = StyleSheet.create({
         alignSelf: "center",
         marginTop: -100,
         width: 70,
-        height:70
+        height: 70
     },
     _Opponent1_heading: {
         color: "white",
@@ -303,48 +306,46 @@ const styles = StyleSheet.create({
         alignItems: "center",
         justifyContent: "center"
     },
-    _round_box:{
-        borderColor:"black",
-        borderWidth:1,
-        width:250,
-        height:250,
-        borderRadius:250/2,
-        marginTop:50,
-        alignSelf:"center"
+    _round_box: {
+        borderColor: "black",
+        width: 250,
+        height: 250,
+        marginTop: 70,
+        alignSelf: "center"
     },
-    _Spin_btn:{
-backgroundColor:"#4145D1",
-height:60,
-marginTop:10,
-marginBottom:20,
-borderRadius:10,
-alignItems:"center",
-justifyContent:"center"
+    _Spin_btn: {
+        backgroundColor: "#4145D1",
+        height: 60,
+        marginTop: 100,
+        marginBottom: 20,
+        borderRadius: 10,
+        alignItems: "center",
+        justifyContent: "center"
     },
-    _Spin_btn_text:{
-fontSize:16,
-fontWeight:'bold',
-color:'white'
+    _Spin_btn_text: {
+        fontSize: 16,
+        fontWeight: 'bold',
+        color: 'white'
     },
-    _BehavioralScience:{
-        fontSize:26,
-        color:"#04052B",
-        fontWeight:'bold',
-        textAlign:"center",
-        marginTop:20,
-        marginBottom:20
+    _BehavioralScience: {
+        fontSize: 26,
+        color: "#04052B",
+        fontWeight: 'bold',
+        textAlign: "center",
+        marginTop: 20,
+        marginBottom: 20
     },
-    _Play_btn:{
-backgroundColor:'#4145D1',
-height:40,
-borderRadius:10,
-alignItems:"center",
-justifyContent:"center",
-marginBottom:10
+    _Play_btn: {
+        backgroundColor: '#4145D1',
+        height: 40,
+        borderRadius: 10,
+        alignItems: "center",
+        justifyContent: "center",
+        marginBottom: 10
     },
-    _Play_btn_text:{
-fontSize:16,
-fontWeight:'bold',
-color:'white'
+    _Play_btn_text: {
+        fontSize: 16,
+        fontWeight: 'bold',
+        color: 'white'
     }
 });

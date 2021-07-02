@@ -43,7 +43,7 @@ export default function TimedMode(props) {
                         </TouchableOpacity>
 
                         {/* <==========================> --- <==========================> */}
-                        <TouchableOpacity style={styles._card5}>
+                        <TouchableOpacity style={styles._card5} onPress={() => props.navigation.navigate("Options")}>
                             <View style={styles._card3_data}>
                                 <Text style={styles.card3_title}>Options</Text>
                                 <Image

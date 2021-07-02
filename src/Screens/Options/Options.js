@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
-import { StyleSheet, View, Text, StatusBar, ScrollView, TouchableOpacity } from 'react-native';
+import { StyleSheet, View, Text, StatusBar, ScrollView, TouchableOpacity,Modal,Alert } from 'react-native';
 import Ionicons from 'react-native-vector-icons/dist/Ionicons';
+import { BlurView } from "@react-native-community/blur";
+import Entypo from 'react-native-vector-icons/dist/Entypo';
+import MaterialCommunityIcons from 'react-native-vector-icons/dist/MaterialCommunityIcons';
 export default function Options(props) {
     const [select, setSelect] = useState(false);
     const [select2, setSelect2] = useState(false);
@@ -8,6 +11,7 @@ export default function Options(props) {
     const [select4, setSelect4] = useState(false);
     const [select5, setSelect5] = useState(false);
     const [select6, setSelect6] = useState(false);
+    const [modalVisible, setModalVisible] = useState(false);
     return (
         <View style={styles.container}>
 
@@ -127,6 +131,34 @@ export default function Options(props) {
                     <View style={{ marginBottom: 20 }}></View>
                 </ScrollView>
             </View>
+            
+            {/* <==========================> --- <==========================> */}
+            <Modal
+                animationType="slide"
+                transparent={true}
+                visible={modalVisible}
+                onRequestClose={() => {
+                    Alert.alert("Modal has been closed.");
+                    setModalVisible(!modalVisible);
+                }}
+            >
+                <View style={styles.centeredView}>
+                    <BlurView >
+                        <View style={styles.modalView}>
+                            <TouchableOpacity onPress={() => setModalVisible(!modalVisible)} style={styles._close_btn}>
+                                <Entypo name="cross" size={20} color="#707070" />
+                            </TouchableOpacity>
+                            <View style={styles._popup_email}>
+                                <MaterialCommunityIcons name="email-outline" size={50} color="#4145D1" />
+                            </View>
+                            <Text style={styles.modalText}>Thank you. An email has been sent to your account with a link that will allow you to reset your password</Text>
+                            <TouchableOpacity style={styles._open_email_btn} >
+                                <Text style={styles._open_email_btn_text}>Open your email app</Text>
+                            </TouchableOpacity>
+                        </View>
+                    </BlurView>
+                </View>
+            </Modal>
         </View>
     );
 }
@@ -246,5 +278,41 @@ const styles = StyleSheet.create({
         fontSize: 18,
         color: "#1C295D",
         fontWeight: "bold"
+    },
+    modalView: {
+        backgroundColor: "white",
+        borderRadius: 20,
+        padding: 36,
+        width: "90%",
+
+    },
+    centeredView: {
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "center",
+    },
+    _close_btn: {
+        width: 36,
+        height: 36,
+        borderRadius: 36 / 2,
+        backgroundColor: "#EFEFEF",
+        alignItems: "center",
+        justifyContent: "center",
+        alignSelf: "flex-end"
+    },
+    _popup_email: {
+        width: 118,
+        height: 118,
+        backgroundColor: "#E8E8FF",
+        borderRadius: 20,
+        alignItems: "center",
+        justifyContent: "center",
+        alignSelf: "center"
+    },
+    modalText: {
+        fontSize: 20,
+        color: "#7B8085",
+        marginTop: 10,
+        textAlign: "center"
     }
 });

@@ -42,7 +42,10 @@ import {
   AllFlashcards,
   OverviewModeOptions,
   InstitutionHighScore,
-  GlobalHighScore
+  GlobalHighScore,
+  BehavioralScienceTest,
+  Explanation,
+  ChooseYourBadge
 } from './../../Screens/index';
 const Stack = createStackNavigator();
 function Navigations() {
@@ -90,6 +93,9 @@ function Navigations() {
         <Stack.Screen name="OverviewModeOptions" component={OverviewModeOptions} options={{ headerShown: false }} />
         <Stack.Screen name="InstitutionHighScore" component={InstitutionHighScore} options={{ headerShown: false }} />
         <Stack.Screen name="GlobalHighScore" component={GlobalHighScore} options={{ headerShown: false }} />
+        <Stack.Screen name="BehavioralScienceTest" component={BehavioralScienceTest} options={{ headerShown: false }} />
+        <Stack.Screen name="Explanation" component={Explanation} options={{ headerShown: false }} />
+        <Stack.Screen name="ChooseYourBadge" component={ChooseYourBadge} options={{ headerShown: false }} />
       </Stack.Navigator>
     </NavigationContainer>
   );
